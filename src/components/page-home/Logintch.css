@@ -1,0 +1,21 @@
+
+.imglogintch {
+  max-width: 50%;
+  height: 100%;
+   position: fixed;
+   top: 0;
+   right: 0;
+}
+
+
+.logintch-section-container {
+   width: 100vw;
+   max-width: 2300px;
+   margin: 0rem auto;
+   background-color:white;
+} 
+
+.logintch-section-image-container {
+  flex: 0.9;
+  margin-left: 1rem;
+}

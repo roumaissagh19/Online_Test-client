@@ -1,0 +1,24 @@
+*{
+    margin:0;
+    padding: 0%;
+    box-sizing: border-box;
+  }
+.imglogin {
+    max-width: 50%;
+    height: 100%;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    
+ }
+.login-section-container {
+     width: 100vw;
+     max-width: 2300px;
+     margin: 0rem auto;
+     background-color:rgb(255, 255, 255);
+  } 
+
+.login-section-image-container {
+    flex: 0.9;
+    margin-right: 1rem;
+  }
