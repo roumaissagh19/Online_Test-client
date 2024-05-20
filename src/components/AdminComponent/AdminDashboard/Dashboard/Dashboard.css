@@ -1,0 +1,39 @@
+.dashboard-container{
+    display: flex;
+    flex-direction:row;
+   
+  }
+  
+  .info-container {
+    width: 200px;
+    min-height: 200px;
+    background-color:#dbe5dc;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 1rem;
+    color: #505050;
+    margin: 1rem 2rem;
+   
+  }
+  
+  .info-container p {
+    margin-bottom: 10px;
+  }
+  
+  .info-container button {
+    background-color: #5a6a5d;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .info-container button:hover {
+    background-color:  #5a6a5d;
+  }
+  

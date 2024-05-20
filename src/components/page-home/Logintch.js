@@ -3,6 +3,8 @@ import React from 'react'
  import './Logintch.css';
 import LoginForm from '../Loginform/LoginForm';
  
+
+ 
 const Logintch = () => {
   return (
     <div className="logintch-section-container" >

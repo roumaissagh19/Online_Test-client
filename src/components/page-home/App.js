@@ -1,8 +1,8 @@
 import "./App.css";
 import Home from "./Home";
 import About from "./About";
-import Contact from "../Loginform/Contact";
-import Footer from "./Footer";
+import Contact from "./Contact";
+ 
 import Work from "./work";
 import Testimonial from "./Testimonial";
  
@@ -15,7 +15,7 @@ function App() {
        <Work/>
       <Testimonial />
       <Contact />
-      <Footer />
+      
     </div>
   );
 }

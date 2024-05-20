@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./Footer";
 
 const Contact = () => {
   return (
@@ -9,7 +10,9 @@ const Contact = () => {
         <input type="text" placeholder="yourmail@gmail.com" />
         <button className="secondary-button">Submit</button>
       </div>
+      <Footer/>
     </div>
+    
   );
 };
 

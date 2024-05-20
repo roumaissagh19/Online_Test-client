@@ -51,11 +51,9 @@ const Navbar = () => {
       <div className="navbar-links-container">
        <Link to="/">Home</Link> 
        < Link to="/About">About</Link> 
-        <a href="">Testimonials</a>
-        <a href="">Contact</a>
-        <a href="">
-          
-        </a>
+        <Link to="/Testimonials">Testimonials</Link>
+          <Link to="contact">contact</Link>
+        
         <button
         className="primary-button"
         onClick={() => {
