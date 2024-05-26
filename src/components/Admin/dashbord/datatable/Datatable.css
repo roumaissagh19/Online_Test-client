@@ -1,0 +1,81 @@
+
+.datatable {
+  height: 550px; /* Adjusted height */
+  padding: 20px; /* Reduced padding */
+  width: 99%;
+  
+  .datatableTitle {
+    width: 100%;
+    font-size: 20px; /* Slightly smaller font size */
+    color: gray;
+    margin-bottom: 5px; /* Reduced margin */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .link {
+      text-decoration: none;
+      color: green;
+      font-size: 14px; /* Slightly smaller font size */
+      font-weight: 400;
+      border: 1px solid green;
+      padding: 3px; /* Reduced padding */
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+
+  .cellWithImg {
+    display: flex;
+    align-items: center;
+
+    .cellImg {
+      width: 28px; /* Slightly smaller image */
+      height: 28px; /* Slightly smaller image */
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px; /* Reduced margin */
+    }
+  }
+
+  .cellWithStatus {
+    padding: 3px; /* Reduced padding */
+    border-radius: 5px;
+
+    &.active {
+      background-color: rgba(0, 128, 0, 0.05);
+      color: green;
+    }
+    &.pending {
+      background-color: rgba(255, 217, 0, 0.05);
+      color: goldenrod;
+    }
+    &.passive {
+      background-color: rgba(255, 0, 0, 0.05);
+      color: crimson;
+    }
+  }
+
+  .cellAction {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Further reduced gap */
+
+    .viewButton, .deleteButton {
+      padding: 1px 8px; /* Reduced padding */
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 12px; /* Reduced font size */
+    }
+
+    .viewButton {
+      color: darkblue;
+      border: 1px dotted rgba(0, 0, 139, 0.596);
+    }
+    
+    .deleteButton {
+      color: crimson;
+      border: 1px dotted rgba(220, 20, 60, 0.6);
+    }
+  }
+}

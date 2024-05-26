@@ -1,7 +1,7 @@
-.list {
+.listU {
     display: flex;
     width: 100%;
-    .listContainer {
+    .listUContainer {
       flex: 6;
     }
   }

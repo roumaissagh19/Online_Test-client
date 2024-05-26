@@ -1,6 +1,6 @@
-.home {
+.Teacher{
     display: flex;
-    .homeContainer {
+    .Teachercontainer{
         flex: 6;
     }
     .widgets,

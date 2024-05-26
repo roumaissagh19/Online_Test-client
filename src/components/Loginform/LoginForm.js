@@ -1,71 +1,101 @@
-import React from 'react'
-import './LoginForm.css'
-import { FaUserAlt } from "react-icons/fa";
-import { FaLock } from "react-icons/fa";
-import {useNavigate} from "react-router-dom"
+import React, { useState, useEffect } from 'react';
+import './LoginForm.css'; // Import your CSS file
+import { FaUserAlt, FaLock } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useState } from "react";
-  
- 
- const LoginForm = () => {
 
-    const[admin , setAdmin] = useState({
-        admin_name:"",
-        admin_password:""
+const LoginForm = () => {
+
+  const INITIAL_STATE = {
+    admin_name: "",
+    admin_password: "",
+  };
+
+  const [admin, setAdmin] = useState(INITIAL_STATE);
+  const navigate = useNavigate();
+
+  const handleInput = (e) => {
+    setAdmin({
+      ...admin,
+      [e.target.name]: e.target.value,
     });
+  };
 
-   function handleInput(e){
-         setAdmin({
-             ...admin,
-             [e.target.name] : e.target.value
-         },[]);
-   }
-   const navigate=useNavigate();
+  const [error, setError] = useState(null); // State for error handling
 
-    async function login(e){
-        const value = await axios.get(" "); 
+  const login = async (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
 
-       //  console.log(value.data[0].admin_name);
-       //  console.log(admin.admin_name);
-        if(value.data[0].admin_name === admin.admin_name)
-        {
-           if(value.data[0].admin_password === admin.admin_password){
-               alert("success");
-               navigate("/AdminDashboard");
-           }
-           else{
-               alert("Wrong Password");
-           }
+    try {
+      const response = await axios.get("your_api_endpoint"); // Replace with your actual API endpoint
+      const validAdmin = response.data.find(
+        (user) => user.admin_name === admin.admin_name
+      );
+
+      if (validAdmin) {
+        if (validAdmin.admin_password === admin.admin_password) {
+          setError(null); // Clear any previous errors
+          alert("Login successful!");
+          navigate("/AdminDashboard"); // Navigate to the dashboard
+        } else {
+          setError("Incorrect password");
         }
-        else{
-            alert("Wrong Admin name");
-        }
+      } else {
+        setError("Invalid username");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      setError("An error occurred. Please try again later."); // Generic error message for user
     }
+  };
 
-   return (
+  useEffect(() => {
+    // Optional: Reset form or error state on component unmount
+    return () => {
+      setAdmin(INITIAL_STATE);
+      setError(null);
+    };
+  }, []); // Empty dependency array ensures it runs only once
+
+  return (
     <div className='wrapper'>
-    <form action="">
+      <form onSubmit={login}>
         <h1>Login</h1>
+
+        {error && <div className="error-message">{error}</div>}
+
         <div className="input-box">
-            <input type="text" onChange={(e) => handleInput(e)} placeholder="Email" required/>
-            <FaUserAlt className='icon'/>
+          <input
+            type="text"
+            onChange={handleInput}
+            placeholder="Email"
+            name="admin_name"
+            required
+          />
+          <FaUserAlt className='icon' />
         </div>
         <div className="input-box">
-            <input type="password" onChange={(e) => handleInput(e)} placeholder="Password" required/>
-            <FaLock className='icon'/>
+          <input
+            type="password"
+            onChange={handleInput}
+            placeholder="Password"
+            name="admin_password"
+            required
+          />
+          <FaLock className='icon' />
         </div>
+
         <div className="remember-forgot">
-            <label><input type="checkbox" />Remember me</label>
-            <a href="#">Forgot password?</a>
-            
+          <label><input type="checkbox" />Remember me</label>
+          <a href="#">Forgot password?</a>
         </div>
+
         <button type='submit'>Login</button>
-        
-    </form>
-</div>
-)
-   
- }
- 
- export default LoginForm
- 
+      </form>
+
+      {/* Optional: Display a loading indicator while fetching data */}
+    </div>
+  );
+};
+
+export default LoginForm;

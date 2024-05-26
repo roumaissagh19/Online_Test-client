@@ -1,8 +1,18 @@
-import React from 'react'
+import Datatable from "../../dashbord/datatable/Datatable"
+import Navbar from "../../dashbord/navbar/Navbar"
+import Sidebar from "../../dashbord/sidebar/Sidebar"
 import "./Liste.css"
-function Liste() {
+ 
+
+const Liste = () => {
   return (
-    <div>Liste</div>
+    <div className="list">
+      <Sidebar/>
+      <div className="listContainer">
+        <Navbar/>
+        <Datatable/>
+      </div>
+    </div>
   )
 }
 

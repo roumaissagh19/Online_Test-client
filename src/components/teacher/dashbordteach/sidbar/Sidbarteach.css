@@ -1,0 +1,103 @@
+.sidebarteach {
+    flex: 1;
+    border-right: 0.5px solid  #5a6a5d;
+    min-height: 100vh;
+   
+     padding: 10px;
+     background-color: #dbe5dc;
+    .top {
+        display: flex;
+        flex-direction: column; /* Stack children elements vertically */
+        align-items: center; /* Center the children horizontally */
+        justify-content: center; /* Center the children vertically */
+        gap: 10px; /* Optional: Add some space between the elements */
+      }
+      
+      .logo {
+        font-size: 20px;
+        font-weight: bold;
+        color: #5a6a5d ;
+        
+      }
+      
+      .top img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      
+    }
+  
+    hr {
+      height: 0;
+      border: 0.5px solid rgb(230, 227, 227);
+    }
+  
+    .center {
+      padding-left: 10px;
+  
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+  
+        .title {
+          font-size: 10px;
+          font-weight: bold;
+          color: #999;
+          margin-top: 15px;
+          margin-bottom: 5px;
+        }
+  
+        li {
+          display: flex;
+          align-items: center;
+          padding: 5px;
+          cursor: pointer;
+  
+          &:hover {
+            background-color: #c9decd;
+          }
+  
+          .icon {
+            font-size: 18px;
+            color:  #5a6a5d;
+          }
+  
+          span{
+              font-size: 13px;
+              font-weight: 600;
+              color: #888;
+              margin-left: 10px;
+          }
+        }
+      }
+    }
+  
+    .bottom{
+        display: flex;
+        align-items: center;
+        margin: 10px;
+  
+        .colorOption{
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+            border: 1px solid #bfe2c6;
+            cursor: pointer;
+            margin: 5px;
+  
+            &:nth-child(1){
+                background-color: whitesmoke;
+            }
+            &:nth-child(2){
+                background-color: #333;
+            }
+            &:nth-child(3){
+                background-color: darkblue;
+            }
+        }
+    }
+  
+  

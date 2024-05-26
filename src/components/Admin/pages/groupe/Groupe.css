@@ -1,0 +1,52 @@
+.Groupe {
+  display: flex;
+}
+
+.GroupeContainer {
+  flex: 6;
+}
+
+.WidgetG{
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line */
+  padding: 40px;
+  gap: 20px; /* Space between items */
+}
+
+.WidgetG > div {
+  flex: 1 1 calc(30% - 20px); /* Each item takes up 50% of the container width minus the gap */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.datatagroupe {
+  width: 100%;
+  font-size: 20px; /* Slightly smaller font size */
+  color: gray;
+  margin-bottom: 5px; /* Reduced margin */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+
+  .link {
+    text-decoration: none;
+    color: green;
+    font-size: 14px; /* Slightly smaller font size */
+    font-weight: 400;
+    border: 1px solid green;
+    padding: 10px; /* Reduced padding */
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+.toop{
+  padding: 10px;
+  margin: 20px;
+  display: flex;
+
+  h1 {
+    color: lightgray;
+    font-size: 20px;
+  }
+}
+
